@@ -31,7 +31,7 @@ function displayBooks() {
         let bookPages = document.createElement("p");
         bookPages.textContent = myLibrary[i].pages + ' pages';
         bookCard.appendChild(bookPages);
-        if (myLibrary[i].hasRead === true) {
+        if (myLibrary[i].hasRead === 'yesRead') {
             let bookRead = document.createTextNode('Read');
             bookCard.appendChild(bookRead);
         } else {
@@ -53,9 +53,10 @@ const form = document.querySelector('#form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(form);
-    const obj = Object.fromEntries(fd);
+    const book = Object.fromEntries(fd);
 
-    console.log(obj);
+    myLibrary.push(book);
+    displayBooks();
 
     openForm.open = false;
     form.reset();
