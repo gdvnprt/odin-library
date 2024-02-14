@@ -53,9 +53,9 @@ const form = document.querySelector('#form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(form);
-    const book = Object.fromEntries(fd);
+    const newBook = Object.fromEntries(fd);
+    addBookToLibrary(newBook.title, newBook.author, newBook.pages, newBook.hasRead);
 
-    myLibrary.push(book);
     displayBooks();
 
     openForm.open = false;
