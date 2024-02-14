@@ -11,11 +11,11 @@ function book(title, author, pages, hasRead) {
 }
 
 function addBookToLibrary(title, author, pages, hasRead) {
-    let newBook = book(title, author, pages, hasRead);
+    let newBook = new book(title, author, pages, hasRead);
     myLibrary.push(newBook);
 }
 
-const container = document.querySelector("container")
+const container = document.querySelector("#container")
 
 function displayBooks() {
     for (var i = 0; i< myLibrary.length; i++) {
@@ -23,12 +23,14 @@ function displayBooks() {
         bookCard.classList.add('book-card');
         container.appendChild(bookCard); 
         let bookTitle = document.createElement("h2");
-        bookTitle.innerHTML("${myLibrary[i].title}");
+        bookTitle.textContent = myLibrary[i].title;
         bookCard.appendChild(bookTitle);
-        let bookAuthor = document.createTextNode('by ${myLibrary[i].author}')
+        let bookAuthor = document.createElement('p');
+        bookAuthor.textContent = 'by ' + myLibrary[i].author;
         bookCard.appendChild(bookAuthor);
-        let bookPages = document.createTextNode('${myLibrary[i].pages} pages')
-        bookCard.appendChild(bookAuthor);
+        let bookPages = document.createElement("p");
+        bookPages.textContent = myLibrary[i].pages + ' pages';
+        bookCard.appendChild(bookPages);
         if (myLibrary[i].hasRead === true) {
             let bookRead = document.createTextNode('Read');
             bookCard.appendChild(bookRead);
