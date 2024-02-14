@@ -48,13 +48,12 @@ bookButton.addEventListener("click", () => {
     openForm.open = true;
 });
 
-let submitButton = document.querySelector("#submit-book");
+const form = document.querySelector('#form');
 
-submitButton.addEventListener("click", () => {
-    let title = document.querySelector("#input-title").value;
-    let author = document.querySelector("input-author").value;
-    let pages = document.querySelector("input-pages").value;
-    let hasRead = document.querySelector("has-read").checked;
-    addBookToLibrary(title, author, pages, hasRead);
-    displayBooks();
-});
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const obj = Object.fromEntries(fd);
+
+    console.log(obj);
+})
