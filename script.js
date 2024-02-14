@@ -56,4 +56,7 @@ form.addEventListener('submit', (e) => {
     const obj = Object.fromEntries(fd);
 
     console.log(obj);
+
+    openForm.open = false;
+    form.reset();
 })
