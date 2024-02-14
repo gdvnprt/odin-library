@@ -1,0 +1,19 @@
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 60vw;
+    height: 60vh;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.book-card {
+    border: 3px solid brown;
+    border-radius: 15px;
+}
