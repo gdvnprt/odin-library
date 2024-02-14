@@ -1,7 +1,8 @@
 body {
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
+    gap: 2vh;
 }
 
 #container {
@@ -16,4 +17,21 @@ body {
 .book-card {
     border: 3px solid brown;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-book {
+    background-color: green;
+    padding: 20px;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
