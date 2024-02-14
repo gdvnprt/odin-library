@@ -47,3 +47,14 @@ let openForm = document.querySelector("#book-form");
 bookButton.addEventListener("click", () => {
     openForm.open = true;
 });
+
+let submitButton = document.querySelector("#submit-book");
+
+submitButton.addEventListener("click", () => {
+    let title = document.querySelector("#input-title").value;
+    let author = document.querySelector("input-author").value;
+    let pages = document.querySelector("input-pages").value;
+    let hasRead = document.querySelector("has-read").checked;
+    addBookToLibrary(title, author, pages, hasRead);
+    displayBooks();
+});
