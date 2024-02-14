@@ -40,3 +40,10 @@ function displayBooks() {
         }
     }
 }
+
+let bookButton = document.querySelector("#new-book");
+let openForm = document.querySelector("#book-form");
+
+bookButton.addEventListener("click", () => {
+    openForm.open = true;
+});

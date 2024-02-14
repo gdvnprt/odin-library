@@ -35,3 +35,9 @@ body {
     align-items: center;
     justify-items: center;
 }
+
+#book-form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
