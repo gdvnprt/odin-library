@@ -55,7 +55,6 @@ function displayBooks() {
 
         deleteButton.addEventListener("click", () => {
             let k = deleteButton.data;
-            let deleteCard = container.childNodes[k];
             let l = myLibrary.length;
             if (l == 1 || l - 1 == k) {
                 myLibrary.pop();
