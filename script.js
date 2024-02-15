@@ -22,15 +22,19 @@ function displayBooks() {
         let bookCard = document.createElement("div");
         bookCard.classList.add('book-card');
         container.appendChild(bookCard); 
+
         let bookTitle = document.createElement("h2");
         bookTitle.textContent = myLibrary[i].title;
         bookCard.appendChild(bookTitle);
+
         let bookAuthor = document.createElement('p');
         bookAuthor.textContent = 'by ' + myLibrary[i].author;
         bookCard.appendChild(bookAuthor);
+
         let bookPages = document.createElement("p");
         bookPages.textContent = myLibrary[i].pages + ' pages';
         bookCard.appendChild(bookPages);
+
         if (myLibrary[i].hasRead === 'yesRead') {
             let bookRead = document.createTextNode('Read');
             bookCard.appendChild(bookRead);
@@ -38,6 +42,20 @@ function displayBooks() {
             let bookRead = document.createTextNode('Have not read');
             bookCard.appendChild(bookRead);
         }
+
+        let btnDiv = document.createElement("div");
+        btnDiv.classList.add("book-buttons");
+        bookCard.appendChild(btnDiv);
+
+        let deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.textContent = "Remove Book";
+        btnDiv.appendChild(deleteButton);
+
+        let toggleRead = document.createElement("button");
+        toggleRead.classList.add("toggle-button");
+        toggleRead.textContent = "Change Read Status";
+        btnDiv.appendChild(toggleRead);
     }
 }
 
