@@ -32,30 +32,32 @@ function displayBooks() {
         bookCard.appendChild(bookTitle);
 
         let bookAuthor = document.createElement('p');
+        bookAuthor.classList.add("author-text");
         bookAuthor.textContent = 'by ' + myLibrary[i].author;
         bookCard.appendChild(bookAuthor);
 
         let bookPages = document.createElement("p");
+        bookPages.classList.add("pages-text");
         bookPages.textContent = myLibrary[i].pages + ' pages';
         bookCard.appendChild(bookPages);
 
         if (myLibrary[i].hasRead === 'yesRead') {
-            let bookRead = document.createTextNode('Read');
+            let bookRead = document.createElement("p");
+            bookRead.classList.add("read-text");
+            bookRead.textContent = "Read"
             bookCard.appendChild(bookRead);
         } else {
-            let bookRead = document.createTextNode('Have not read');
+            let bookRead = document.createElement("p");
+            bookRead.classList.add("read-text");
+            bookRead.textContent = "Not Read"
             bookCard.appendChild(bookRead);
         }
-
-        let btnDiv = document.createElement("div");
-        btnDiv.classList.add("book-buttons");
-        bookCard.appendChild(btnDiv);
 
         let deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-button");
         deleteButton.textContent = "Remove Book";
         deleteButton.data = i;
-        btnDiv.appendChild(deleteButton);
+        bookCard.appendChild(deleteButton);
 
         deleteButton.addEventListener("click", () => {
             let k = deleteButton.data;
@@ -72,7 +74,7 @@ function displayBooks() {
         let toggleRead = document.createElement("button");
         toggleRead.classList.add("toggle-button");
         toggleRead.textContent = "Change Read Status";
-        btnDiv.appendChild(toggleRead);
+        bookCard.appendChild(toggleRead);
 
         toggleRead.addEventListener("click", () => {
             let data = deleteButton.data;

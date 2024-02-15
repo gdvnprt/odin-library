@@ -22,43 +22,62 @@ body {
     border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 3fr 1fr 2fr 2fr 2fr;
+    grid-template-rows: repeat(5, 1fr);
     justify-items: center;
+    position: relative;
 }
 
 .book-card h2 {
-    grid-row: 0 / 1;
-    grid-column: 0 / 4;
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+    position: relative;
+    top: 2vh;
 }
 
 .author-text{
-    grid-row: 1 / 2;
-    grid-column: 0 / 4;
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+    position: relative;
+    bottom: 1vh;
 }
 
 .pages-text {
-    grid-row: 2 / 3;
-    grid-column: 0 / 4;
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
+    position: relative;
+    bottom: 2vh;
 }
 
 .read-text {
-    grid-row: 3 / 4;
-    grid-column: 0 / 4;
+    grid-row: 4 / 5;
+    grid-column: 1 / 5;
+    position: relative;
+    bottom: 3vh;
 }
 .book-card button {
     padding: 5px;
+    position: relative;
+    bottom: 2.5vh;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.book-card button:hover {
+    box-shadow: 1px 1px 10px 2px #000000;
 }
 
 .delete-button {
-    grid-row: 4 / 5;
-    grid-column: 0 / 1;
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
     background-color: red;
+    left: 1vw;
 }
 
 .toggle-button {
-    grid-row: 4 / 5;
-    grid-column: 2 / 3;
-    background-color: yellow;
+    grid-row: 5 / 6;
+    grid-column: 3 / 4;
+    background-color: orange;
+    right: 1vw;
 }
 
 #new-book {
@@ -72,6 +91,10 @@ body {
     display: flex;
     align-items: center;
     justify-items: center;
+}
+
+#new-book:hover {
+    box-shadow: 5px 5px 15px 3px #000000;
 }
 
 #book-form fieldset {
