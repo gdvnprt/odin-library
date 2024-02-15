@@ -5,8 +5,12 @@ function book(title, author, pages, hasRead) {
     this.author = author;
     this.pages = pages;
     this.hasRead = hasRead;
-    this.info = function() {
-        return "${this.title} by ${this.author}, ${this.pages} pages, ${this.hasread}."
+    this.toggleReadStatus = function () {
+        if (this.hasRead === "yesRead") {
+            this.hasRead = "notRead";
+            } else {
+            this.hasRead = "yesRead"
+        };
     };
 };
 
