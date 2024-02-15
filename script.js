@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function book(title, author, pages, hasRead) {
     this.title = title;
@@ -7,13 +7,13 @@ function book(title, author, pages, hasRead) {
     this.hasRead = hasRead;
     this.info = function() {
         return "${this.title} by ${this.author}, ${this.pages} pages, ${this.hasread}."
-    }
-}
+    };
+};
 
 function addBookToLibrary(title, author, pages, hasRead) {
     let newBook = new book(title, author, pages, hasRead);
     myLibrary.push(newBook);
-}
+};
 
 const container = document.querySelector("#container")
 
@@ -50,11 +50,19 @@ function displayBooks() {
         let deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-button");
         deleteButton.textContent = "Remove Book";
+        deleteButton.data = i;
         btnDiv.appendChild(deleteButton);
 
         deleteButton.addEventListener("click", () => {
-            let deleteCard = container.childNodes[i + 1];
+            let k = deleteButton.data;
+            let deleteCard = container.childNodes[k];
             container.removeChild(deleteCard);
+            let l = myLibrary.length;
+            if (l == 1 || l - 1 == k) {
+                myLibrary.pop();
+            } else {
+                myLibrary = myLibrary.slice(0, k).concat(myLibrary.slice(k + 1));
+            }
         })
 
         let toggleRead = document.createElement("button");
