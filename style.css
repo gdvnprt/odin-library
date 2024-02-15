@@ -6,21 +6,59 @@ body {
 }
 
 #container {
-    width: 60vw;
-    height: 60vh;
+    width: 90vw;
+    height: 90vh;
     background-color: blanchedalmond;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25%, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow: scroll;
 }
 
 .book-card {
     border: 3px solid brown;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3fr 1fr 2fr 2fr 2fr;
+    justify-items: center;
+}
+
+.book-card h2 {
+    grid-row: 0 / 1;
+    grid-column: 0 / 4;
+}
+
+.author-text{
+    grid-row: 1 / 2;
+    grid-column: 0 / 4;
+}
+
+.pages-text {
+    grid-row: 2 / 3;
+    grid-column: 0 / 4;
+}
+
+.read-text {
+    grid-row: 3 / 4;
+    grid-column: 0 / 4;
+}
+.book-card button {
+    padding: 5px;
+}
+
+.delete-button {
+    grid-row: 4 / 5;
+    grid-column: 0 / 1;
+    background-color: red;
+}
+
+.toggle-button {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    background-color: yellow;
 }
 
 #new-book {
