@@ -5,7 +5,7 @@ function book(title, author, pages, hasRead) {
     this.author = author;
     this.pages = pages;
     this.hasRead = hasRead;
-    this.toggleReadStatus = function () {
+    this.toggleReadStatus = function() {
         if (this.hasRead === "yesRead") {
             this.hasRead = "notRead";
             } else {
@@ -73,6 +73,13 @@ function displayBooks() {
         toggleRead.classList.add("toggle-button");
         toggleRead.textContent = "Change Read Status";
         btnDiv.appendChild(toggleRead);
+
+        toggleRead.addEventListener("click", () => {
+            let data = deleteButton.data;
+            myLibrary[data].toggleReadStatus();
+            clearDisplay();
+            displayBooks();
+        });
     }
 }
 
