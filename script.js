@@ -56,13 +56,14 @@ function displayBooks() {
         deleteButton.addEventListener("click", () => {
             let k = deleteButton.data;
             let deleteCard = container.childNodes[k];
-            container.removeChild(deleteCard);
             let l = myLibrary.length;
             if (l == 1 || l - 1 == k) {
                 myLibrary.pop();
             } else {
                 myLibrary = myLibrary.slice(0, k).concat(myLibrary.slice(k + 1));
             }
+            clearDisplay();
+            displayBooks();
         })
 
         let toggleRead = document.createElement("button");
