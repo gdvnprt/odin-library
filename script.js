@@ -52,6 +52,11 @@ function displayBooks() {
         deleteButton.textContent = "Remove Book";
         btnDiv.appendChild(deleteButton);
 
+        deleteButton.addEventListener("click", () => {
+            let deleteCard = container.childNodes[i + 1];
+            container.removeChild(deleteCard);
+        })
+
         let toggleRead = document.createElement("button");
         toggleRead.classList.add("toggle-button");
         toggleRead.textContent = "Change Read Status";
