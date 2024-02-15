@@ -41,6 +41,12 @@ function displayBooks() {
     }
 }
 
+function clearDisplay() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
 let bookButton = document.querySelector("#new-book");
 let openForm = document.querySelector("#book-form");
 
@@ -56,6 +62,7 @@ form.addEventListener('submit', (e) => {
     const newBook = Object.fromEntries(fd);
     addBookToLibrary(newBook.title, newBook.author, newBook.pages, newBook.hasRead);
 
+    clearDisplay();
     displayBooks();
 
     openForm.open = false;
