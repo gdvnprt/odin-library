@@ -1,11 +1,20 @@
 let myLibrary = [];
 
-function book(title, author, pages, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-    this.toggleReadStatus = function() {
+class book {
+    constructor(title) {
+        this.title = title;
+    };
+    constructor(author) {
+        this.author = author;
+    };
+    constructor(pages) {
+        this.pages = pages;
+    };
+    constructor(hasRead) {
+        this.hasRead = hasRead;
+    };
+
+    toggleReadStatus = function() {
         if (this.hasRead === "yesRead") {
             this.hasRead = "notRead";
             } else {
